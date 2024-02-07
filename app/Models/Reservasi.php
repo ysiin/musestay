@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reservasi extends Model
 {
     use HasFactory;
-    protected $table = "reservasis" ;
+    protected $table = "reservasi" ;
     protected $fillable = [
         'nama',
         'jumlah_tiket',
