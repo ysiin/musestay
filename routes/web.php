@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\ReservasiController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['admin'])->group(function () {
-    
+
+
+    Route::get('reservasi', function() {
+        return view('reservasi.index');
+    });
+
+
 });
+
