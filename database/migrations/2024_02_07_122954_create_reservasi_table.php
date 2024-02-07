@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('harga_total');
             $table->string('no_telp');
             $table->string('email');
-            $table->enum('status', ['aktif', 'tidak aktif']);
+            $table->enum('status', ['Belum Dibayar', 'Sudah Dibayar']);
             $table->timestamps(); // Tambahkan kolom created_at dan updated_at
             
         });
