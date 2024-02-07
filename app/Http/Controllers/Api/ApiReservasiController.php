@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Reservasi;
 use Illuminate\Http\Request;
 
-class ReservasiController extends Controller
+class ApiReservasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,7 +43,7 @@ class ReservasiController extends Controller
             'tanggal_datang' => 'required|string',
             'no_telp' => 'required|string',
             'email' => 'required|email',
-            'status' => 'required|in:aktif,tidak aktif',
+          
         ]);
 
         // Hitung harga total berdasarkan jumlah tiket
@@ -61,7 +61,7 @@ class ReservasiController extends Controller
         $newData->tanggal_datang = $request->input('tanggal_datang');
         $newData->no_telp = $request->input('no_telp');
         $newData->email = $request->input('email');
-        $newData->status = $request->input('status');
+   
 
         // Simpan data ke database
         $newData->save();

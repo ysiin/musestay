@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\ApiReservasiController;
 use App\Http\Controllers\api\ReservasiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     
 });
 
-Route::post('reservasi/create', [ReservasiController::class, 'store']);    
-Route::get('reservasi', [ReservasiController::class, 'index']);    
+Route::post('reservasi/create', [ApiReservasiController::class, 'store']);    
+Route::get('reservasi', [ApiReservasiController::class, 'index']);    
