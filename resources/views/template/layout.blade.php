@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>E-Perpus</title>
+    <title>MuseStay</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -14,10 +14,12 @@
 
     <!-- CSS Libraries -->
     <link rel="stylesheet" href=" {{ asset('stisla/node_modules/bootstrap-daterangepicker/daterangepicker.css') }}">
-    <link rel="stylesheet" href=" {{ asset('stisla/node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }} ">
+    <link rel="stylesheet"
+        href=" {{ asset('stisla/node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('stisla/node_modules/select2/dist/css/select2.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('stisla/node_modules/selectric/public/selectric.css') }} ">
-    <link rel="stylesheet" href=" {{ asset('stisla/node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }} ">
+    <link rel="stylesheet"
+        href=" {{ asset('stisla/node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('stisla/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }} ">
 
     <!-- Template CSS -->
@@ -42,7 +44,8 @@
 
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src=" {{ asset('stisla/assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
+                            <img alt="image" src=" {{ asset('stisla/assets/img/avatar/avatar-1.png') }}"
+                                class="rounded-circle mr-1">
                             <div class="d-sm-none d-lg-inline-block">Hi,
                                 @auth
                                     {{ Auth::user()->name }}
@@ -72,10 +75,10 @@
                         <!-- Sidebar admin -->
                         <aside id="sidebar-wrapper">
                             <div class="sidebar-brand">
-                                <a href="index.html">E-Perpus</a>
+                                <a href="index.html">MUSESTAY</a>
                             </div>
                             <div class="sidebar-brand sidebar-brand-sm">
-                                <a href="index.html">EP</a>
+                                <a href="index.html">MST</a>
                             </div>
                             <ul class="sidebar-menu">
                                 <li class="menu-header">Dashboard</li>
@@ -85,10 +88,22 @@
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li class="menu-header">Starter</li>
+                                <li class="menu-header">Menu</li>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                                            class="fas fa-th"></i> <span>Master Data</span></a>
+                                            class="fas fa-th"></i> <span>Museum</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a class="nav-link"
+                                                href="{{ url('reservasi/create') }}">Reservasi</a>
+                                        </li>
+                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket/create') }}">Transaksi</a></li>
+                                        <li><a class="nav-link" href="">Kategori</a></li>
+                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                                            class="fas fa-th"></i> <span>Hotel</span></a>
                                     <ul class="dropdown-menu">
                                         <li class=""><a class="nav-link" href="">Anggota</a>
                                         </li>
@@ -103,34 +118,59 @@
                                         <span>Peminjaman</span>
                                     </a>
                                 </li>
+                                <li class="menu-header">Master Data Admin</li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                                            class="fas fa-th"></i> <span>Museum</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a class="nav-link"
+                                                href="{{ url('reservasi') }}">Reservasi</a>
+                                        </li>
+                                        <li><a class="nav-link" href="">Buku</a></li>
+                                        <li><a class="nav-link" href="">Kategori</a></li>
+                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </aside>
-
                     @else
-                    <aside id="sidebar-wrapper">
-                        <div class="sidebar-brand">
-                            <a href="index.html">E-Perpus</a>
-                        </div>
-                        <div class="sidebar-brand sidebar-brand-sm">
-                            <a href="index.html">EP</a>
-                        </div>
-                        <ul class="sidebar-menu">
-                            <li class="menu-header">Dashboard</li>
-                            <li class="nav-item">
-                                <a href="">
-                                    <i class="fas fa-fire"></i>
-                                    <span>Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="menu-header">Starter</li>
-                            <li class="nav-item">
-                                <a href="">
-                                    <i class="fas fa-fire"></i>
-                                    <span>Peminjaman</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </aside>
+                        <aside id="sidebar-wrapper">
+                            <div class="sidebar-brand">
+                                <a href="index.html">MUSESTAY</a>
+                            </div>
+                            <div class="sidebar-brand sidebar-brand-sm">
+                                <a href="index.html">MST</a>
+                            </div>
+                            <ul class="sidebar-menu">
+                                <li class="menu-header">Dashboard</li>
+                                <li class="nav-item">
+                                    <a href="">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="menu-header">Master Data Admin</li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                                            class="fas fa-th"></i> <span>Museum</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a class="nav-link"
+                                                href="{{ url('reservasi/create') }}">Reservasi</a>
+                                        </li>
+                                        <li><a class="nav-link" href="">Pembayaran</a></li>
+                                        <li><a class="nav-link" href="">Kategori</a></li>
+                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-header">Starter</li>
+                                <li class="nav-item">
+                                    <a href="">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Peminjaman</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
                     @endif
                 @endif
             </div>
