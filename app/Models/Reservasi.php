@@ -16,6 +16,12 @@ class Reservasi extends Model
         'no_telp',
         'email',
         'status',
+        'created_by',
     ];
+
+    public function createdBy()
+{
+    return $this->belongsTo(User::class, 'created_by');
+}
 
 }

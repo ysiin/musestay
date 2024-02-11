@@ -57,10 +57,10 @@
                                 <i class="far fa-user"></i> Profile
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="ss="dropdown-item has-icon text-danger"
+                            <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
                                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                                <form id="logout-form" action="od="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
                                 <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
@@ -96,7 +96,8 @@
                                         <li class=""><a class="nav-link"
                                                 href="{{ url('reservasi/create') }}">Reservasi</a>
                                         </li>
-                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket/create') }}">Transaksi</a></li>
+                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
+                                        </li>
                                         <li><a class="nav-link" href="">Kategori</a></li>
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
@@ -126,7 +127,7 @@
                                         <li class=""><a class="nav-link"
                                                 href="{{ url('reservasi') }}">Reservasi</a>
                                         </li>
-                                        <li><a class="nav-link" href="">Buku</a></li>
+                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket') }}">Pembayaran</a></li>
                                         <li><a class="nav-link" href="">Kategori</a></li>
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
@@ -149,7 +150,7 @@
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li class="menu-header">Master Data Admin</li>
+                                <li class="menu-header">MENU</li>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                             class="fas fa-th"></i> <span>Museum</span></a>
@@ -157,7 +158,8 @@
                                         <li class=""><a class="nav-link"
                                                 href="{{ url('reservasi/create') }}">Reservasi</a>
                                         </li>
-                                        <li><a class="nav-link" href="">Pembayaran</a></li>
+                                        <li><a class="nav-link"
+                                                href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a></li>
                                         <li><a class="nav-link" href="">Kategori</a></li>
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>

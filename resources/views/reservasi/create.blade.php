@@ -8,7 +8,7 @@
                 Form Reservasi
             </div>
             <div class="card-body">
-            <form method="POST" action="{{ route('reservasi.store') }}">
+                <form method="POST" action="{{ route('reservasi.store') }}">
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama</label>
@@ -20,7 +20,8 @@
                     </div>
                     <div class="form-group">
                         <label for="tanggal_datang">Tanggal Datang</label>
-                        <input type="date" class="form-control" id="tanggal_datang" name="tanggal_datang" required>
+                        <input type="text" class="form-control datepicker" id="tanggal_datang" name="tanggal_datang"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="no_telp">No Telepon</label>

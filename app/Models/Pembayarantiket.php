@@ -9,5 +9,10 @@ class Pembayarantiket extends Model
 {
     use HasFactory;
     protected $table = "pembayarantiket" ;
+    protected $fillable = ['reservasi_id', 'bank_tf', 'nama_rek', 'tanggal_transfer', 'bukti_transfer'];
 
+    public function reservasi()
+    {
+        return $this->belongsTo(Reservasi::class);
+    }
 }

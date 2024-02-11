@@ -1,26 +1,46 @@
 @extends('template.layout')
 
 @section('judul')
-    Pembayaran Tiket
+    Validasi Pembayaran Tiket
 @endsection
 
 @section('content')
-    <div class="d-flex">
-
-        @foreach ($reservasi as $item)
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Reservasi Tiket</h4>
-                    </div>
-                    <div class="card-body">
-                        <h6>{{ $item->nama }}</h6>
-                        <p>{{ $item->tanggal_datang }}</p>
-                        <p>{{ $item->harga_total }}</p>
-                            <a class="btn btn-primary" href="">Bayar</a>
-                    </div>
+    <div class="col-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="detail-tiket">
+                    <h5>Nama : {{ $reservasi->nama }}</h5>
+                    <h5>Tanggal Kedatangan : {{ $reservasi->tanggal_datang }}</h5>
+                    <h5 class="mb-5">Harga : {{ $reservasi->harga_total }}</h5>
+                    <h5>No. Rekening</h5>
+                    <h5>Mandiri : 1170011266178 An. Yaa Siin </h5>
                 </div>
             </div>
-        @endforeach
+            <div class="card-body">
+                <form method="POST" action="{{ route('pembayaran-tiket.store') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label for="pembayaran_via">Pembayaran Via</label>
+                        <input type="text" class="form-control" placeholder="Contoh: Mandiri/BCA/Gopay dll"
+                            id="bank_tf" name="bank_tf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama_rek">Nama Rekening Pengirim</label>
+                        <input type="text" class="form-control" id="nama_rek" name="nama_rek" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal_transfer">Tanggal Transfer</label>
+                        <input type="text" class="form-control datepicker" id="tanggal_transfer" name="tanggal_transfer"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bukti_transfer">Bukti Transfer</label>
+                        <input type="file" class="form-control" id="bukti_transfer" name="bukti_transfer" required>
+                    </div>
+                    <input type="hidden" class="form-control" value="{{ $reservasi->id }}" name="reservasi_id" required>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 @endsection

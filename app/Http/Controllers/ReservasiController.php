@@ -6,9 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Reservasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservasiController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -56,12 +62,13 @@ class ReservasiController extends Controller
         $newData->tanggal_datang = $request->input('tanggal_datang');
         $newData->no_telp = $request->input('no_telp');
         $newData->email = $request->input('email');
+        $newData->created_by = Auth::id(); // Menyematkan ID pengguna yang membuat entitas.
     
         // Simpan data ke database
         $newData->save();
     
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('reservasi.index')->with('success', 'Reservasi berhasil dibuat!');
+        return redirect()->route('pembayaran-tiket.menu')->with('success', 'Reservasi berhasil dibuat!');
     }
     
 

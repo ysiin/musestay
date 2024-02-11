@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pembayarantiket', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('reservasi_id')->constrained('reservasi');
+            $table->string('nama_rek');
+            $table->string('bank_tf');
+            $table->date('tanggal_transfer');
+            $table->string('bukti_transfer');
             $table->timestamps();
         });
     }
