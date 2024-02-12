@@ -21,6 +21,7 @@
     <link rel="stylesheet"
         href=" {{ asset('stisla/node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('stisla/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }} ">
+    <link rel="stylesheet" href="{{ asset('stisla/node_modules/ionicons201/css/ionicons.min.css') }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('stisla/assets/css/style.css') }}">
@@ -106,9 +107,6 @@
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                             class="fas fa-th"></i> <span>Hotel</span></a>
                                     <ul class="dropdown-menu">
-                                        <li class=""><a class="nav-link" href="">Anggota</a>
-                                        </li>
-                                        <li><a class="nav-link" href="">Buku</a></li>
                                         <li><a class="nav-link" href="">Kategori</a></li>
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
@@ -128,6 +126,18 @@
                                                 href="{{ url('reservasi') }}">Reservasi</a>
                                         </li>
                                         <li><a class="nav-link" href="{{ url('pembayaran-tiket') }}">Pembayaran</a></li>
+                                        <li><a class="nav-link" href="">Kategori</a></li>
+                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                                            class="fas fa-th"></i> <span>Hotel</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a class="nav-link"
+                                                href="{{ url('hotel') }}">Hotel</a>
+                                        </li>
+                                        <li><a class="nav-link" href="{{ url('hotel/create') }}">Tambah Hotel</a></li>
                                         <li><a class="nav-link" href="">Kategori</a></li>
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
@@ -160,6 +170,14 @@
                                         </li>
                                         <li><a class="nav-link"
                                                 href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a></li>
+                                        <li><a class="nav-link" href="">Kategori</a></li>
+                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                                            class="fas fa-th"></i> <span>Hotel</span></a>
+                                    <ul class="dropdown-menu">
                                         <li><a class="nav-link" href="">Kategori</a></li>
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
@@ -228,6 +246,7 @@
 
     <!-- Page Specific JS File -->
     <script src=" {{ asset('stisla/assets/js/page/forms-advanced-forms.js') }}"></script>
+    <script src="{{ asset('stisla/assets/js/page/modules-ion-icons.js') }}"></script>
 
 </body>
 
