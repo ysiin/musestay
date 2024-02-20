@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\JenisKamarController;
+use App\Http\Controllers\KamarController;
 use App\Http\Controllers\PembayarantiketController;
 use App\Http\Controllers\ReservasiController;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +38,14 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/hotel', [HotelController::class, 'index'])->name('hotel.index');
     Route::get('/hotel/create', [HotelController::class, 'create'])->name('hotel.create');
     Route::post('/hotel/store', [HotelController::class, 'store'])->name('hotel.store');
+
+    Route::get('/jenis-kamar', [JenisKamarController::class, 'index'])->name('jeniskamar.index');
+    Route::get('/jenis-kamar/create', [JenisKamarController::class, 'create'])->name('jeniskamar.create');
+    Route::post('/jenis-kamar/store', [JenisKamarController::class, 'store'])->name('jeniskamar.store');
+
+    Route::get('/kamar', [KamarController::class, 'index'])->name('kamar.index');
+    Route::get('/kamar/create', [KamarController::class, 'create'])->name('kamar.create');
+    Route::post('/kamar/store', [KamarController::class, 'store'])->name('kamar.store');
 });
 
 

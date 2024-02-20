@@ -38,8 +38,8 @@
                         @endif
                     </div>
                     <div class="card-body">
-                        <h4>{{ $item->alamat }}</h4>
-                        <img src="{{ public_path($item->foto_hotel) }}" alt="{{ $item->nama_hotel }}" style="max-width: 200px; max-height: 150px;">
+                        <img src="{{ Storage::url($item->foto_hotel) }}" alt="{{ $item->nama_hotel }}" style="max-width: 200px; max-height: 150px;">
+                        <h5 class="mt-2">{{ $item->alamat }}</h5>
                     </div>
                 </div>
             </div>

@@ -138,8 +138,8 @@
                                                 href="{{ url('hotel') }}">Hotel</a>
                                         </li>
                                         <li><a class="nav-link" href="{{ url('hotel/create') }}">Tambah Hotel</a></li>
-                                        <li><a class="nav-link" href="">Kategori</a></li>
-                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                        <li><a class="nav-link" href="{{ url('jenis-kamar') }}">Jenis Kamar</a></li>
+                                        <li><a class="nav-link" href="{{ url('jenis-kamar/create') }}">Tambah Jenis Kamar</a></li>
                                     </ul>
                                 </li>
                             </ul>

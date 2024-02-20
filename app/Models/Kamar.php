@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Jeniskamar extends Model
+class Kamar extends Model
 {
     use HasFactory;
-
-    protected $table = 'jeniskamar';
+    protected $table = 'kamar';
     protected $guarded = [];
 
-    public function hotel()
+    public function jeniskamar()
     {
-        return $this->belongsTo(Hotel::class);
+        return $this->belongsTo(Jeniskamar::class);
     }
 }
