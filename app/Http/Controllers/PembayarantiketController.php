@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pembayarantiket;
 use App\Models\Reservasi;
+use App\Observers\UpdateStatusObserver;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -36,14 +37,14 @@ class PembayarantiketController extends Controller
 
     public function updateStatus(Request $request, string $id)
     {
-        $data = Reservasi::where('id', $id);
+        $observer = new UpdateStatusObserver();
+        $observer->updateStatus($id);
 
-        $data->update(['status' => 'Success']);
+        // Tambahkan pesan berhasil jika perlu
+        session()->flash('success', 'Status berhasil diperbarui dan notifikasi telah dikirimkan');
 
         return redirect()->route('pembayaran-tiket.index');
-
     }
-
     /**
      * Show the form for creating a new resource.
      */
