@@ -13,6 +13,6 @@ class Kamar extends Model
 
     public function jeniskamar()
     {
-        return $this->belongsTo(Jeniskamar::class);
+        return $this->belongsTo(JenisKamar::class, 'jeniskamar_id');
     }
 }

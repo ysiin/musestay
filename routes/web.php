@@ -5,6 +5,7 @@ use App\Http\Controllers\JenisKamarController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\PembayarantiketController;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\ReservasiHotelController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi.index');
-
+    Route::get('/reservasi-hotel', [ReservasiHotelController::class, 'index'])->name('reservasi-hotel.index');
     
     Route::get('/pembayaran-tiket', [PembayarantiketController::class, 'index'])->name('pembayaran-tiket.index');
     Route::PUT('/pembayaran-tiket/status/{id}', [PembayarantiketController::class, 'updateStatus'])->name('updateStatus');
@@ -52,6 +53,9 @@ Route::middleware(['admin'])->group(function () {
 Route::get('/reservasi/create', [ReservasiController::class, 'create']);
 Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');
 
+
+Route::get('/reservasi-hotel/create', [ReservasiHotelController::class, 'create']);
+Route::post('/reservasi-hotel', [ReservasiHotelController::class, 'store'])->name('reservasi-hotel.store');
 
 
 Route::get('/pembayaran-tiket/menu', [PembayarantiketController::class, 'menu'])->name('pembayaran-tiket.menu');
