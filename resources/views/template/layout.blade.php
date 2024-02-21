@@ -107,6 +107,11 @@
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                             class="fas fa-th"></i> <span>Hotel</span></a>
                                     <ul class="dropdown-menu">
+                                    <li class=""><a class="nav-link"
+                                                href="{{ url('reservasi-hotel/create') }}">Reservasi</a>
+                                        </li>
+                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
+                                        </li>
                                         <li><a class="nav-link" href="">Kategori</a></li>
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
