@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pembayaranhotel', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('reservasi_hotel_id')->constrained('reservasi_hotel');
+            $table->string('nama_rek');
+            $table->string('bank_tf');
+            $table->date('tanggal_transfer');
+            $table->string('bukti_transfer');
             $table->timestamps();
         });
     }
@@ -23,5 +28,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('pembayaranhotel');
+
     }
 };

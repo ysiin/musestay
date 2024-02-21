@@ -10,5 +10,11 @@ class Pembayaranhotel extends Model
     use HasFactory;
 
     protected $table = "pembayaranhotel" ;
+    protected $fillable = ['reservasi_hotel_id', 'bank_tf', 'nama_rek', 'tanggal_transfer', 'bukti_transfer'];
+
+    public function reservasihotel()
+    {
+        return $this->belongsTo(Reservasi_hotel::class);
+    }
 
 }

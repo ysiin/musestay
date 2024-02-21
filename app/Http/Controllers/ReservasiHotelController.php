@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotel;
+use App\Models\Jeniskamar;
 use App\Models\Kamar;
 use App\Models\Reservasi_hotel;
 use Illuminate\Http\Request;
@@ -20,13 +22,40 @@ class ReservasiHotelController extends Controller
         return view('reservasi_hotel.index', compact('data'));
     }
 
+    public function pilihhotel()
+    {
+        $data = Hotel::all();
+        return view('reservasi_hotel.pilihhotel', compact('data'));
+    }
+
+    
+    public function pilihjeniskamar(string $id)
+    {
+        $hotel = Hotel::find($id);
+        $jeniskamar = Jeniskamar::where('hotel_id', $hotel->id)->get();
+
+        if (!$hotel) {
+            abort(404);  //Handle jika data tidak ditemukan
+        }
+
+        return view('reservasi_hotel.pilihjeniskamar', compact('hotel'))->with('jeniskamar', $jeniskamar);
+
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
-        $kamar = Kamar::with('jeniskamar')->get();
-        return view('reservasi_hotel.create', compact('kamar'));
+        $jeniskamar = Jeniskamar::find($id);
+        $kamar = kamar::where('jeniskamar_id', $jeniskamar->id)->get();
+
+        if (!$jeniskamar) {
+            abort(404);  //Handle jika data tidak ditemukan
+        }
+
+        return view('reservasi_hotel.create', compact('jeniskamar'))->with('kamar', $kamar);
     }
     /**
      * Store a newly created resource in storage.

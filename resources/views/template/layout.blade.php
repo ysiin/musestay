@@ -84,7 +84,7 @@
                             <ul class="sidebar-menu">
                                 <li class="menu-header">Dashboard</li>
                                 <li class="nav-item">
-                                    <a href="">
+                                    <a href="{{ url('/') }}">
                                         <i class="fas fa-fire"></i>
                                         <span>Dashboard</span>
                                     </a>
@@ -116,12 +116,6 @@
                                         <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="">
-                                        <i class="fas fa-fire"></i>
-                                        <span>Peminjaman</span>
-                                    </a>
-                                </li>
                                 <li class="menu-header">Master Data Admin</li>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
@@ -145,6 +139,8 @@
                                         <li><a class="nav-link" href="{{ url('hotel/create') }}">Tambah Hotel</a></li>
                                         <li><a class="nav-link" href="{{ url('jenis-kamar') }}">Jenis Kamar</a></li>
                                         <li><a class="nav-link" href="{{ url('jenis-kamar/create') }}">Tambah Jenis Kamar</a></li>
+                                        <li><a class="nav-link" href="{{ url('kamar') }}">Kamar</a></li>
+                                        <li><a class="nav-link" href="{{ url('kamar/create') }}">Tambah Kamar</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -160,7 +156,7 @@
                             <ul class="sidebar-menu">
                                 <li class="menu-header">Dashboard</li>
                                 <li class="nav-item">
-                                    <a href="">
+                                    <a href="{{ url('/') }}">
                                         <i class="fas fa-fire"></i>
                                         <span>Dashboard</span>
                                     </a>
