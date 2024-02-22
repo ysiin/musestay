@@ -99,21 +99,18 @@
                                         </li>
                                         <li><a class="nav-link" href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
                                         </li>
-                                        <li><a class="nav-link" href="">Kategori</a></li>
-                                        <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                             class="fas fa-th"></i> <span>Hotel</span></a>
                                     <ul class="dropdown-menu">
-                                    <li class=""><a class="nav-link"
-                                                href="{{ url('reservasi-hotel/create') }}">Reservasi</a>
+                                        <li class=""><a class="nav-link" href="{{ url('pilih-hotel') }}">Pesan
+                                                Hotel</a>
                                         </li>
-                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
+                                        <li>
+                                            <a class="nav-link" href="{{ url('pembayaran-hotel/menu') }}">Transaksi</a>
                                         </li>
-                                        <li><a class="nav-link" href="">Kategori</a></li>
-                                        <li><a class="nav-link" href="">Penerbit</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-header">Master Data Admin</li>
@@ -124,23 +121,26 @@
                                         <li class=""><a class="nav-link"
                                                 href="{{ url('reservasi') }}">Reservasi</a>
                                         </li>
-                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket') }}">Pembayaran</a></li>
-                                        <li><a class="nav-link" href="">Kategori</a></li>
-                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket') }}">Pembayaran</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                             class="fas fa-th"></i> <span>Hotel</span></a>
                                     <ul class="dropdown-menu">
-                                        <li class=""><a class="nav-link"
-                                                href="{{ url('hotel') }}">Hotel</a>
+                                        <li><a class="nav-link" href="{{ url('pembayaran-hotel') }}">Pembayaran</a>
                                         </li>
-                                        <li><a class="nav-link" href="{{ url('hotel/create') }}">Tambah Hotel</a></li>
+                                        <li class=""><a class="nav-link" href="{{ url('hotel') }}">Hotel</a>
+                                        </li>
+                                        <li><a class="nav-link" href="{{ url('hotel/create') }}">Tambah Hotel</a>
+                                        </li>
                                         <li><a class="nav-link" href="{{ url('jenis-kamar') }}">Jenis Kamar</a></li>
-                                        <li><a class="nav-link" href="{{ url('jenis-kamar/create') }}">Tambah Jenis Kamar</a></li>
+                                        <li><a class="nav-link" href="{{ url('jenis-kamar/create') }}">Tambah Jenis
+                                                Kamar</a></li>
                                         <li><a class="nav-link" href="{{ url('kamar') }}">Kamar</a></li>
-                                        <li><a class="nav-link" href="{{ url('kamar/create') }}">Tambah Kamar</a></li>
+                                        <li><a class="nav-link" href="{{ url('kamar/create') }}">Tambah Kamar</a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -155,13 +155,14 @@
                             </div>
                             <ul class="sidebar-menu">
                                 <li class="menu-header">Dashboard</li>
+                                <li class="menu-header">Dashboard</li>
                                 <li class="nav-item">
                                     <a href="{{ url('/') }}">
                                         <i class="fas fa-fire"></i>
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li class="menu-header">MENU</li>
+                                <li class="menu-header">Menu</li>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                             class="fas fa-th"></i> <span>Museum</span></a>
@@ -169,26 +170,21 @@
                                         <li class=""><a class="nav-link"
                                                 href="{{ url('reservasi/create') }}">Reservasi</a>
                                         </li>
-                                        <li><a class="nav-link"
-                                                href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a></li>
-                                        <li><a class="nav-link" href="">Kategori</a></li>
-                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                             class="fas fa-th"></i> <span>Hotel</span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="nav-link" href="">Kategori</a></li>
-                                        <li><a class="nav-link" href="">Penerbit</a></li>
+                                        <li class=""><a class="nav-link" href="{{ url('pilih-hotel') }}">Pesan
+                                                Hotel</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="{{ url('pembayaran-hotel/menu') }}">Transaksi</a>
+                                        </li>
                                     </ul>
-                                </li>
-                                <li class="menu-header">Starter</li>
-                                <li class="nav-item">
-                                    <a href="">
-                                        <i class="fas fa-fire"></i>
-                                        <span>Peminjaman</span>
-                                    </a>
                                 </li>
                             </ul>
                         </aside>

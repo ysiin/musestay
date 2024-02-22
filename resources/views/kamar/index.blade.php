@@ -18,6 +18,8 @@
                             <th>Nama Hotel</th>
                             <th>Nama Jenis Kamar</th>
                             <th>No Kamar</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +28,15 @@
                             <td>{{ $item->jeniskamar->hotel->nama_hotel }}</td>
                             <td>{{ $item->jeniskamar->n_jenis_kamar }}</td>
                             <td>{{ $item->no_kamar }}</td>
+                            <td>{{ $item->status }}</td>
+                            <td>
+                            <form class="d-inline" action="{{ route('updateStatusKamar', ['id' => $item->id]) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button class="btn btn-icon btn-sm icon-left btn-success">Checkout
+                                </button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

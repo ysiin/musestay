@@ -30,12 +30,15 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::middleware(['admin'])->group(function () {
     Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi.index');
     Route::get('/reservasi-hotel', [ReservasiHotelController::class, 'index'])->name('reservasi-hotel.index');
-    
+
     Route::get('/pembayaran-tiket', [PembayarantiketController::class, 'index'])->name('pembayaran-tiket.index');
     Route::PUT('/pembayaran-tiket/status/{id}', [PembayarantiketController::class, 'updateStatus'])->name('updateStatus');
 
     Route::get('/pembayaran-hotel', [PembayaranhotelController::class, 'index'])->name('pembayaran-hotel.index');
-    Route::PUT('/pembayaran-hotel/status/{id}', [PembayaranhotelController::class, 'updateStatus'])->name('updateStatus');
+    Route::PUT('/pembayaran-hotel/status/{id}', [PembayaranhotelController::class, 'updateStatus'])->name('updateStatusHotel');
+
+    Route::PUT('/kamar/status/{id}', [KamarController::class, 'updateStatus'])->name('updateStatusKamar');
+
 
     Route::get('/hotel', [HotelController::class, 'index'])->name('hotel.index');
     Route::get('/hotel/create', [HotelController::class, 'create'])->name('hotel.create');

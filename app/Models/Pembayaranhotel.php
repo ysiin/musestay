@@ -12,7 +12,7 @@ class Pembayaranhotel extends Model
     protected $table = "pembayaranhotel" ;
     protected $fillable = ['reservasi_hotel_id', 'bank_tf', 'nama_rek', 'tanggal_transfer', 'bukti_transfer'];
 
-    public function reservasihotel()
+    public function reservasi_hotel()
     {
         return $this->belongsTo(Reservasi_hotel::class);
     }

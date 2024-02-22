@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotel;
 use App\Models\Pembayaranhotel;
 use App\Models\Reservasi_hotel;
 use Illuminate\Http\Request;
@@ -30,6 +31,16 @@ class PembayaranhotelController extends Controller
             ->where('created_by', Auth::id())->get();
 
         return view('pembayaranhotel.menu')->with('reservasi', $reservasi);
+    }
+
+    public function updateStatus(Request $request, string $id)
+    {
+        $data = Reservasi_hotel::where('id', $id);
+        $data->update(['status' => 'success']);
+
+        // Tambahkan pesan berhasil jika perlu
+
+        return redirect()->route('pembayaran-hotel.index');
     }
 
     /**

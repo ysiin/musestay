@@ -17,6 +17,16 @@ class KamarController extends Controller
         return view('kamar.index', compact('data'));
     }
 
+    public function updateStatus(Request $request, string $id)
+    {
+        $data = Kamar::where('id', $id);
+        $data->update(['status' => 'Kosong']);
+
+        // Tambahkan pesan berhasil jika perlu
+
+        return redirect()->route('kamar.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
