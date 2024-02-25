@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('bank_tf');
             $table->date('tanggal_transfer');
             $table->string('bukti_transfer');
+            $table->foreignId('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

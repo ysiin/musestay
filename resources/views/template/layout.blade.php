@@ -95,9 +95,12 @@
                                             class="fas fa-th"></i> <span>Museum</span></a>
                                     <ul class="dropdown-menu">
                                         <li class=""><a class="nav-link"
-                                                href="{{ url('reservasi/create') }}">Reservasi</a>
+                                            href="{{ url('reservasi/create') }}">Reservasi</a>
                                         </li>
                                         <li><a class="nav-link" href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
+                                        </li>
+                                        <li class=""><a class="nav-link"
+                                            href="{{ url('history-tiket') }}">History</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -110,6 +113,9 @@
                                         </li>
                                         <li>
                                             <a class="nav-link" href="{{ url('pembayaran-hotel/menu') }}">Transaksi</a>
+                                        </li>
+                                        <li class=""><a class="nav-link"
+                                            href="{{ url('history-hotel') }}">History</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -170,7 +176,11 @@
                                         <li class=""><a class="nav-link"
                                                 href="{{ url('reservasi/create') }}">Reservasi</a>
                                         </li>
-                                        <li><a class="nav-link" href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
+                                        <li><a class="nav-link"
+                                                href="{{ url('pembayaran-tiket/menu') }}">Transaksi</a>
+                                        </li>
+                                        <li class=""><a class="nav-link"
+                                            href="{{ url('history-tiket') }}">History</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -182,7 +192,11 @@
                                                 Hotel</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="{{ url('pembayaran-hotel/menu') }}">Transaksi</a>
+                                            <a class="nav-link"
+                                                href="{{ url('pembayaran-hotel/menu') }}">Transaksi</a>
+                                        </li>
+                                        <li class=""><a class="nav-link"
+                                            href="{{ url('history-hotel') }}">History</a>
                                         </li>
                                     </ul>
                                 </li>

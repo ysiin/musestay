@@ -26,6 +26,12 @@ class PembayarantiketController extends Controller
         return view('pembayarantiket.index', compact('data'));
     }
 
+    public function history()
+    {
+        $data = Pembayarantiket::where('created_by', Auth::id())->get();
+        return view('pembayarantiket.history')->with('data', $data);
+    }
+
     public function menu()
     {
         $reservasi = Reservasi::where('status', 'Pending')
@@ -82,6 +88,7 @@ class PembayarantiketController extends Controller
             'bukti_transfer' => $path,
             'tanggal_transfer' => $request->tanggal_transfer,
             'bank_tf' => $request->bank_tf,
+            'created_by' => Auth::id(),
         ];
 
         //simpan data ke db

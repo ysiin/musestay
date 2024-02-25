@@ -88,7 +88,7 @@ class ReservasiHotelController extends Controller
         $newData->save();
     
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('reservasi-hotel.index')->with('success', 'Reservasi berhasil dibuat!');
+        return redirect()->route('pembayaran-hotel.menu')->with('success', 'Reservasi berhasil dibuat!');
     }
     /**
      * Display the specified resource.

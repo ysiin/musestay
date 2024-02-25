@@ -30,8 +30,8 @@
                     </div>
                     <div class="form-group">
                         <label for="tanggal_booking">Tanggal Booking</label>
-                        <input type="text" class="form-control datepicker" id="tanggal_booking" name="tanggal_booking"
-                            required>
+                        <input type="date" class="form-control" value="{{ \Carbon\Carbon::now()->toDateString() }}" id="tanggal_booking" name="tanggal_booking"
+                            readonly>
                     </div>
                     <div class="form-group">
                         <label for="tanggal_checkin">Tanggal Checkin</label>

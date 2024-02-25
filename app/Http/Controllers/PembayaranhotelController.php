@@ -25,6 +25,12 @@ class PembayaranhotelController extends Controller
         return view('pembayaranhotel.index', compact('data'));
     }
 
+    public function history()
+    {
+        $data = Pembayaranhotel::where('created_by', Auth::id())->get();
+        return view('pembayaranhotel.history')->with('data', $data);
+    }
+
     public function menu()
     {
         $reservasi = Reservasi_hotel::where('status', 'Pending')
@@ -80,6 +86,7 @@ class PembayaranhotelController extends Controller
             'bukti_transfer' => $path,
             'tanggal_transfer' => $request->tanggal_transfer,
             'bank_tf' => $request->bank_tf,
+            'created_by' => Auth::id(),
         ];
 
         //simpan data ke db
